@@ -1,0 +1,11 @@
+nondexFilter=.*
+nondexMode=FULL
+nondexSeed=3958590
+nondexStart=0
+nondexEnd=9223372036854775807
+nondexPrintstack=false
+nondexDir=/home/shengan4/Chronicle-Wire/.nondex
+nondexJarDir=/home/shengan4/Chronicle-Wire/.nondex
+nondexExecid=zUaltMB2peir1P7lR+FTmglPiJR86VHSPKDaEp7ViI=
+nondexLogging=CONFIG
+test=

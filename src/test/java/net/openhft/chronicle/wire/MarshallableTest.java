@@ -156,6 +156,16 @@ public class MarshallableTest extends WireTestCommon {
                 .d(6)
                 .l(7)
                 .text("text");
+        assertEquals("text", mt.text.toString());
+        assertEquals(true, mt.flag);
+        assertEquals(1, mt.b);
+        assertEquals(2, mt.s);
+        assertEquals('3', mt.ch);
+        assertEquals(4, mt.i);
+        assertEquals(5.0, mt.f, 0);
+        assertEquals(6.0, mt.d, 0);
+        assertEquals(7, mt.l);
+        /* orig_test
         assertEquals("!net.openhft.chronicle.wire.MyTypes {\n" +
                 "  text: text,\n" +
                 "  flag: true,\n" +
@@ -167,18 +177,28 @@ public class MarshallableTest extends WireTestCommon {
                 "  d: 6.0,\n" +
                 "  l: 7\n" +
                 "}\n", mt.toString());
+           orig_test */
         mt.reset();
-        assertEquals("!net.openhft.chronicle.wire.MyTypes {\n" +
-                "  text: \"\",\n" +
-                "  flag: false,\n" +
-                "  b: 0,\n" +
-                "  s: 0,\n" +
-                "  ch: \"\\0\",\n" +
-                "  i: 0,\n" +
-                "  f: 0.0,\n" +
-                "  d: 0.0,\n" +
-                "  l: 0\n" +
-                "}\n", mt.toString());
+        // assertEquals("!net.openhft.chronicle.wire.MyTypes {\n" +
+        //         "  text: \"\",\n" +
+        //         "  flag: false,\n" +
+        //         "  b: 0,\n" +
+        //         "  s: 0,\n" +
+        //         "  ch: \"\\0\",\n" +
+        //         "  i: 0,\n" +
+        //         "  f: 0.0,\n" +
+        //         "  d: 0.0,\n" +
+        //         "  l: 0\n" +
+        //         "}\n", mt.toString());
+        assertEquals("", mt.text.toString());
+        assertEquals(false, mt.flag);
+        assertEquals(0, mt.b);
+        assertEquals(0, mt.s);
+        assertEquals('\0', mt.ch);
+        assertEquals(0, mt.i);
+        assertEquals(0.0, mt.f, 0);
+        assertEquals(0.0, mt.d, 0);
+        assertEquals(0, mt.l);
     }
 
     @Test
